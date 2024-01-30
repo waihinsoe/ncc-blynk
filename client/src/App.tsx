@@ -17,6 +17,8 @@ const App = () => {
         const reader = new FileReader();
         reader.onload = () => {
           const text = reader.result;
+          const lightStatus = JSON.parse(text as string);
+          setStatus(lightStatus.status);
           setMessage(text as string);
         };
         reader.readAsText(data);
@@ -47,7 +49,7 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <h1>React WebSocket Client</h1>
-        <Switch onChange={onChange} />
+        <Switch checked={status} onChange={onChange} />
         <p>Received Message: {message}</p>
       </header>
     </div>

@@ -24,6 +24,6 @@ wss.on("connection", function connection(ws) {
 app.use(express.static("public"));
 
 // const PORT = process.env.PORT || 3000;
-server.listen(3000, "192.168.1.12", () => {
+server.listen(3000, "0.0.0.0", () => {
   console.log(`Server running on port ${3000}`);
 });
